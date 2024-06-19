@@ -173,7 +173,7 @@ def test_simple(args):
 
             # SAVE FILES
             output_name = os.path.splitext(os.path.basename(image_path))[0]
-            cv2.imwrite(f"{output_dir}/{output_name}_synt.jpg", cv2.cvtColor(hazy, cv2.COLOR_RGB2BGR))
+            cv2.imwrite(f"{output_dir}/{output_name}.jpg", cv2.cvtColor(hazy, cv2.COLOR_RGB2BGR))
 
             print("   Processed {:d} of {:d} images".format(idx + 1, len(paths)))
 
