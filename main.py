@@ -34,7 +34,7 @@ def parse_args():
                             "stereo_1024x320",
                             "mono+stereo_1024x320"])
     parser.add_argument('--ext', type=str,
-                        help='image extension to search for in folder', default="jpg")
+                        help='image extension to search for in folder', default=".jpg")
     parser.add_argument("--no_cuda",
                         help='if set, disables CUDA',
                         action='store_true')
@@ -118,7 +118,7 @@ def test_simple(args):
         output_directory = os.path.dirname(args.image_path)
     elif os.path.isdir(args.image_path):
         # Searching folder for images
-        paths = glob.glob(os.path.join(args.image_path, '*.{}'.format(args.ext)))
+        paths = glob.glob(os.path.join(args.image_path, '*{}'.format(args.ext)))
         output_directory = args.image_path
     else:
         raise Exception("Can not find args.image_path: {}".format(args.image_path))
